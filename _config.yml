@@ -1,6 +1,6 @@
 title: "dwBruijn"
 author: "Nicolas DeBruijn"
-description: "Made with <b style=\"color: #f45;\">&lt;3</b> by <b><a href=\"https://github.com/niklasbuschmann\">@niklasbuschmann</a></b>"
+description: "Hacking, Reverse engineering, malware analysis, CTFs, and low level stuff..."
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
