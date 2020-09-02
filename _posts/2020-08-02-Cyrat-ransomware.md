@@ -1,5 +1,6 @@
 ---
 title:  "Cyrat: A badly written Ransomware"
+description: "Badly written python ransomware that uses fernet to encrypt files"
 layout: post
 ---
 
