@@ -1,5 +1,5 @@
 ---
-title:  "HackTheBox Reversing: Debugme"
+title:  "HackTheBox Reversing Challenge: Debugme"
 description: "Solving HackTheBox's reversing challenge Debugme"
 layout: post
 ---
