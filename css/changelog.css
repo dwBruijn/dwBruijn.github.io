@@ -1,0 +1,255 @@
+.changelog code[class*=language-], .changelog pre[class*=language-] {
+  color: #333;
+  background: transparent;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.changelog pre[class*=language-] {
+  padding: 0.8em;
+  overflow: auto;
+  border-radius: 3px;
+  background: #f5f5f5;
+}
+
+.changelog :not(pre) > code[class*=language-] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.changelog .token.blockquote,
+.changelog .token.comment {
+  color: #969896;
+}
+
+.changelog .token.cdata {
+  color: #183691;
+}
+
+.changelog .token.doctype,
+.changelog .token.macro.property,
+.changelog .token.punctuation,
+.changelog .token.variable {
+  color: #333;
+}
+
+.changelog .token.builtin,
+.changelog .token.important,
+.changelog .token.keyword,
+.changelog .token.operator,
+.changelog .token.rule {
+  color: #a71d5d;
+}
+
+.changelog .token.attr-value,
+.changelog .token.regex,
+.changelog .token.string,
+.changelog .token.url {
+  color: #183691;
+}
+
+.changelog .token.atrule,
+.changelog .token.boolean,
+.changelog .token.code,
+.changelog .token.command,
+.changelog .token.constant,
+.changelog .token.entity,
+.changelog .token.number,
+.changelog .token.property,
+.changelog .token.symbol {
+  color: #0086b3;
+}
+
+.changelog .token.prolog,
+.changelog .token.selector,
+.changelog .token.tag {
+  color: #63a35c;
+}
+
+.changelog .token.attr-name,
+.changelog .token.class,
+.changelog .token.class-name,
+.changelog .token.function,
+.changelog .token.id,
+.changelog .token.namespace,
+.changelog .token.pseudo-class,
+.changelog .token.pseudo-element,
+.changelog .token.url-reference .token.variable {
+  color: #795da3;
+}
+
+.changelog .token.entity {
+  cursor: help;
+}
+
+.changelog .token.title,
+.changelog .token.title .token.punctuation {
+  font-weight: 700;
+  color: #1d3e81;
+}
+
+.changelog .token.list {
+  color: #ed6a43;
+}
+
+.changelog .token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.changelog .token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.changelog .token.bold {
+  font-weight: 700;
+}
+
+.changelog .token.italic {
+  font-style: italic;
+}
+
+.changelog .language-json .token.property {
+  color: #183691;
+}
+
+.changelog .language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+.changelog .language-css .token.function,
+.changelog code.language-css {
+  color: #0086b3;
+}
+
+.changelog .language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+.changelog code.language-yaml {
+  color: #183691;
+}
+
+.changelog .language-ruby .token.function {
+  color: #333;
+}
+
+.changelog .language-markdown .token.url {
+  color: #795da3;
+}
+
+.changelog .language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.changelog .language-makefile .token.variable {
+  color: #183691;
+}
+
+.changelog .language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+.changelog .language-bash .token.keyword {
+  color: #0086b3;
+}
+
+.changelog pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+
+.changelog pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+.changelog pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%, 0.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%, 0.1) 70%, hsla(24, 20%, 50%, 0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+.changelog pre[data-line] .line-highlight:before,
+.changelog pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: 0.4em;
+  left: 0.6em;
+  min-width: 1em;
+  padding: 0 0.5em;
+  background-color: hsla(24, 20%, 50%, 0.4);
+  color: #f4f1ef;
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: 0.3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px #fff;
+}
+
+.changelog pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: 0.4em;
+}
+
+/* General HTML and body styles */
+.changelog {
+  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  overflow: initial;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+.changelog > :first-child {
+  margin-top: 0;
+}
+
+.changelog h1, 
+.changelog h2, 
+.changelog h3, 
+.changelog h4, 
+.changelog h5, 
+.changelog h6 {
+  line-height: 1.2;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  color: #000;
+}
+
+.changelog h1 {
+  font-size: 2.25em;
+  font-weight: 300;
+  padding-bottom: 0.3em;
+}

@@ -1,0 +1,105 @@
+---
+title: Resume
+layout: home
+---
+
+<div style="background-color: var(--tf-page-bg-color)" class="bg-gradient py-3">
+  <div class="container">
+
+    <div class="row">
+      <div class="col">
+        <h1 class="display-4 text-center">{{ site.data.bio.basics.name }}</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        {% capture url %}{{ site.data.bio.basics.website }}{% endcapture %}
+        {% capture label %}{{ site.data.bio.basics.website | remove: "http://" | remove: "https://" }}{% endcapture %}
+        <p class="mb-1">{% include about/social.html url=url name='house' label=label %} </p>
+
+        {% capture url %}mailto:{{ site.data.bio.basics.email }}{% endcapture %}
+        {% capture label %}{{ site.data.bio.basics.email }}{% endcapture %}
+        <p class="mb-1">{% include about/social.html url=url name='envelope' label=label %}</p>
+
+        {% for profile in site.data.bio.basics.profiles %}
+          {% capture url %}{{ profile.url }}{% endcapture %}
+          {% capture name %}{{ profile.network | downcase }}{% endcapture %}
+          {% capture label %}{{ profile.username }}{% endcapture %}
+          <p class="mb-1">{% include about/social.html url=url name=name label=label %}</p>
+        {% endfor %}
+      </div>
+      <div class="col">
+        <p class="mb-1 text-end">{{ site.data.bio.basics.location.address }}</p>
+        <p class="mb-1 text-end">{{ site.data.bio.basics.location.city }}, {{ site.data.bio.basics.location.region }} {{ site.data.bio.basics.location.postalCode }} {{ site.data.bio.basics.location.countryCode }}</p>
+        <p class="mb-1 text-end">{{ site.data.bio.basics.phone }}</p>
+      </div>
+    </div>
+
+    <div class="row pt-4 align-items-center">
+      <div class="col-lg-3">
+        <h1 class="display-6 text-start m-0">About me</h1>
+      </div>
+      <div class="col-lg-9">
+        {% for entry in site.data.bio.basics.summaryLong %}
+          <p class="m-0 long-summary-entry">
+            {{ entry }}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="row pt-4 align-items-center">
+      <div class="col-lg-3">
+        <h1 class="display-6 text-start m-0">Interests</h1>
+      </div>
+      <div class="col-lg-9">
+        <p class="m-0">
+          {% for entry in site.data.bio.interests %}
+          {{ entry.name }}{% if forloop.last != true %}, {% endif %}
+          {% endfor %}
+        </p>
+      </div>
+    </div>
+
+    <div class="row pt-4 align-items-center">
+      <div class="col-lg-3">
+        <h1 class="display-6 text-start m-0">Education</h1>
+      </div>
+      <div class="col-lg-9">
+        {% for entry in site.data.bio.education %}
+          <div class="mb-2">
+            <p class="m-0"><strong>{{ entry.studyType }} in {{ entry.area }}</strong></p>
+            <p class="m-0">{{ entry.institution }}</p>
+            <p class="m-0 text-muted">{{ entry.startDate }} - {{ entry.endDate }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="row pt-4 align-items-center">
+      <div class="col-lg-3">
+        <h1 class="display-6 text-start m-0">Work</h1>
+      </div>
+      <div class="col-lg-9">
+        <p class="m-0">
+          See my <a href="{{ '/#career-changelog' | prepend: site.baseurl }}">Career <code>changelog</code></a> for the details.
+        </p>
+      </div>
+    </div>
+
+    <div class="row pt-4 align-items-center">
+      <div class="col-lg-3">
+        <h1 class="display-6 text-start m-0">Resume</h1>
+      </div>
+      <div class="col-lg-9">
+        <p class="m-0">Available upon request.
+          <!--
+         <a href="{{ site.data.bio.basics.resumeUrlPdf }}" target="_blank">Download <svg class="tf-social">
+          <use xlink:href="{{ '/img/bootstrap-icons.svg' | prepend: site.baseurl }}#filetype-pdf"/>
+        </svg></a>
+          -->
+        </p>
+      </div>
+    </div>
+</div>

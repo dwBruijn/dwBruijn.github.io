@@ -1,0 +1,19 @@
+<header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ '/' | prepend: site.baseurl }}">{{ site.data.bio.basics.name }}</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="{{ '/#projects' | prepend: site.baseurl }}">Projects</a>
+        <a class="nav-link" href="{{ '/#blogs' | prepend: site.baseurl }}">Blogs</a>
+        <a class="nav-link" style="padding-right: 4px;"  href="{{ '/resume.html' | prepend: site.baseurl }}" title="Resume: view page">About Me</a>
+        <!--
+        <a class="nav-link" style="padding-right: 4px;"  href="{{ '/resume.html' | prepend: site.baseurl }}" title="Resume: view page">Resume</a>
+        <a class="nav-link" style="padding-left: 0px;" href="{{ site.data.bio.basics.resumeUrlPdf }}" target="_blank" title="Resume: download PDF"><svg class="tf-social">
+          <use xlink:href="{{ '/img/bootstrap-icons.svg' | prepend: site.baseurl }}#filetype-pdf"/>
+        </svg>
+        </a>
+        -->
+      </ul>
+    </div>
+  </div>
+</header>

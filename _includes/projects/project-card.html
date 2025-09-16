@@ -1,0 +1,24 @@
+<div class="col-md-6 col-lg-4">
+  <div class="card h-100">
+    <div class="card-body">
+      <h5 class="card-title"><a class="nav-link" href="{{ site.baseurl}}{{ include.page.url }}">{{ include.page.title }}</a></h5>
+      <p>
+        {% for label in include.page.labels %}
+        <span style="background-color: var(--tf-pill-bg)" class="badge rounded-pill">{{ label }}</span>
+        {% endfor %}
+      </p>
+
+      <p class="card-text">{{ include.page.summary }}</p>
+    </div>
+
+    <div class="card-footer">
+      <div class="text-center">
+        {% if page.projecturl %}
+        <a href="{{ page.projecturl }}" class="btn btn-outline-dark">Project Site</a>
+        {% else %}
+        <a href="{{ site.baseurl}}{{ include.page.url }}" class="btn btn-outline-dark">Read More</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

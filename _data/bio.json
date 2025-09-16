@@ -1,0 +1,59 @@
+{
+  "basics": {
+    "name": "Charbel Farhat",
+    "label": "Backend Engineer and Software Architect",
+    "picture": "https://github.com/dwbruijn.png",
+    "email": "charbel.y.farhat@gmail.com",
+    "phone": "",
+    "website": "https://charbelfarhat.com",
+    "resumeUrlPdf": "",
+    "summary": "I'm a Software Engineer specializing in backend development. Cybersecurity really piques my curiosity !",
+    "summaryLong": [
+      "I'm a Software Engineer with 3 years of experience specilizing in Backend development and Cloud engineering. I enjoy coding, especially when it involves collaborating with a team to tackle complex problems and coming up with scalable and cost-efficient solutions.",
+      "My involvement in cybersecurity since high school (bug bounty hunting, malware analysis, and threat intelligence) helped me develop an attacker's mindset, which gives me a unique edge in system design and secure coding practices that most engineers simply don't have.",
+      "While ChatGPT might be quicker at cranking out CRUD stacks, I believe my real value comes in balancing the trade-offs, working with people, and finding the right solutions that align with business requirements and budget constraints.",
+      "I like to keep things light and fun, but I'm serious about delivering quality. Whether it's diving into code reviews or process improvements, I aim for a balance of high standards and practical solutions."
+    ],
+    "location": { "address": "", "postalCode": "", "city": "Beirut", "countryCode": "Lebanon", "region": "" },
+    "profiles": [
+      { "network": "github", "username": "dwbruijn", "url": "https://github.com/dwbruijn" },
+      { "network": "linkedin", "username": "charbelfarhat", "url": "https://linkedin.com/in/charbelfarhat" }
+    ]
+  },
+  "interests": [
+    { "name": "Python" },
+    { "name": "Java" },
+    { "name": "Cybersecurity" },
+    { "name": "Distributed Systems" },
+    { "name": "Cloud Computing" },
+    { "name": "SQL/NoSQL" }
+  ],
+  "skills": [
+    {
+      "name": "Languages and Frameworks",
+      "keywords": [ "Python", "Java", "C++", "FastAPI", "SpringBoot" ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Lebanese University",
+      "area": "Computer Science",
+      "studyType": "BS",
+      "startDate": "2018",
+      "endDate": "2021",
+      "courses": [
+      ]
+    }
+  ],
+  "work": [
+  ],
+  "volunteer": [
+  ],
+  "awards": [
+  ],
+  "references": [
+    {
+      "name": "Available upon request"
+    }
+  ]
+}
