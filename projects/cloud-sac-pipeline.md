@@ -5,6 +5,7 @@ title: "Cloud SaC Pipeline"
 date: 2025-10-22
 published: true
 labels:
+  - DevSecOps
   - Terraform
   - Cloud
   - GCP
