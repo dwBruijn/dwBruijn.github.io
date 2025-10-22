@@ -19,7 +19,7 @@ projecturl: https://github.com/dwBruijn/Cloud-SaC-Pipeline
 ## Security-as-Code Pipeline for GCP
 
 ### What It Does
-A GitHub Actions CI/CD pipeline that automatically scans Terraform infrastructure code on every pull request, identifying 50+ types of security misconfigurations including public data exposure, weak encryption, overly permissive access controls, and hardcoded secrets.
+A GitHub Actions CI/CD pipeline that automatically scans Terraform IaC manifests on every pull request, identifying 100+ types of security misconfigurations including public data exposure, weak encryption, overly permissive access controls, and hardcoded secrets.
 
 ### Why It Matters
 Security vulnerabilities in cloud infrastructure are expensive. According to IBM's 2024 Cost of a Data Breach Report, the average breach costs $4.88M, with misconfigured cloud resources being a leading cause. This project prevents these issues by:
