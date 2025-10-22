@@ -1,24 +1,17 @@
-<div class="col-md-6 col-lg-4">
+<div class="col-md-6 col-lg-4" xmlns="http://www.w3.org/1999/html">
   <div class="card h-100">
     <div class="card-body">
-      <h5 class="card-title"><a class="nav-link" href="{{ site.baseurl}}{{ include.page.url }}">{{ include.page.title }}</a></h5>
+      <h5 class="card-title">{{ include.page.title }}</h5>
+      <p class="card-text"><small class="text-muted">{{ include.page.date | date_to_string }}</small></p>
+      <p class="card-text">{{ include.page.summary }}</p>
       <p>
         {% for label in include.page.labels %}
         <span style="background-color: var(--tf-pill-bg)" class="badge rounded-pill">{{ label }}</span>
         {% endfor %}
       </p>
-
-      <p class="card-text">{{ include.page.summary }}</p>
     </div>
-
     <div class="card-footer">
-      <div class="text-center">
-        {% if page.projecturl %}
-        <a href="{{ page.projecturl }}" class="btn btn-outline-dark">Project Site</a>
-        {% else %}
-        <a href="{{ site.baseurl}}{{ include.page.url }}" class="btn btn-outline-dark">Read More</a>
-        {% endif %}
-      </div>
+      <div class="text-center"><a href="{% if page.projecturl %}{{ page.projecturl }}{% else %}{{ site.baseurl}}{{ include.page.url }}{% endif %}" class="btn btn-outline-dark">Read More</a></div>
     </div>
   </div>
 </div>
