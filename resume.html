@@ -79,6 +79,22 @@ layout: home
 
     <div class="row pt-4 align-items-center">
       <div class="col-lg-3">
+        <h1 class="display-6 text-start m-0">Certifications</h1>
+      </div>
+      <div class="col-lg-9">
+        {% for entry in site.data.bio.certifications %}
+          <div class="mb-2">
+            <p class="m-0"><strong>{{ entry.cert }}</strong></p>
+            <p class="m-0">{{ entry.institution }}</p>
+            <p class="m-0 text-muted">{{ entry.date }}</p>
+            <a href="{{ entry.credential_url }}"> Show credential.
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="row pt-4 align-items-center">
+      <div class="col-lg-3">
         <h1 class="display-6 text-start m-0">Work</h1>
       </div>
       <div class="col-lg-9">
