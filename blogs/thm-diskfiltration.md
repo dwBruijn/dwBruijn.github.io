@@ -13,11 +13,11 @@ labels:
 
 ![DiskFiltration Banner](../img/diskfiltration/banner.png)
 
-# Introduction
-
 Lately I've been investing a lot of time into TryHackMe's Security Analyst path (SOC L1, SOC L2, Advanced Endpoint Investigations) in order to sharpen my blue teaming skills.
 
 DiskFiltration is a fun challenge that I came across today.
+
+# Challenge Intro
 
 > Description: Tech THM discovered their critical data had been leaked to the competitors. After an internal investigation, the company suspects Liam, a recently terminated employee who was working as a system engineer with Tech THM. This suspicion was raised as Liam had access to the leaked data in his company-provided workstation. He often worked late hours without clear justification for his extended presence. He was also caught roaming around the critical server room and taking pictures of the entry gate. Following these suspicions, Liam’s workstation (provided by the company) was investigated. The initial investigation suggests that an external entity was also helping Liam.
 
@@ -32,7 +32,7 @@ Our task is to find traces of Liam's activities on the live machine using differ
 
 ### What is the serial number of the USB device Liam used for exfiltration? 
 
-Using *Autopsy* to analyze *ds.E01* (Liam's disk) we can examine details of USB devices that were attached to this machine and we can see that the latest USB drive attached has serial number **2651931097993496666**. We could've also done this by accessing extracted hive files using *Registry Explorer* and looking for specific registry keys like `HKLM\SYSTEM\ControlSet001\Enum\USBTOR\` and `HKLM\SYSTEM\MountedDevices??\Volume{...}`
+Using *Autopsy* to analyze *ds.E01* (Liam's disk image) we can examine details of USB devices that were attached to this machine and we can see that the latest USB drive attached has serial number **2651931097993496666**. We could've also done this by accessing extracted hive files using *Registry Explorer* and looking for specific registry keys like `HKLM\SYSTEM\ControlSet001\Enum\USBTOR\` and `HKLM\SYSTEM\MountedDevices??\Volume{...}`
 
 ![USB serial](../img/diskfiltration/Q1-1.png)
 
@@ -78,17 +78,17 @@ We can find traces of *File Explorer*'s search history in the registry. So we lo
 
 ![explorer history](../img/diskfiltration/Q7-1.png)
 
-### What are the names of the folders that were present on the USB device? (alphabetical order)
+### What are the names of the folders that were present on the USB device?
 
 Since we are looking for folders, we assume that Liam browsed to those folders and we check if shell bags will provide us with an answer. *Autopsy Shell Bags* are crucial forensic artifacts within the Windows Registry, stored in `NTUSER.DAT` and `USRCLASS.DAT`, that track user folder access (browsing, creating, deleting) to reveal file system activity, even for deleted items, showing folder view settings (size, location) and activity patterns. With that being said, Looking at the shell bags we see 2 interesting folders: **Critical Data TECH THM** and **Exfiltration Plan**.
 
 ![explorer history](../img/diskfiltration/Q8-1.png)
 
-### The external entity didn't fully trust Liam for the exfiltration so they asked him to execute file_uploader.exe, through the instructions in PDF. When was this file last executed and how many times was it executed? (YYYY-MM-DD HH:MM:SS, number of execution times)
+### The external entity didn't fully trust Liam for the exfiltration so they asked him to execute file_uploader.exe, through the instructions in PDF. When was this file last executed and how many times was it executed?
 
-The best way to go about this is by examining *Prefetch*. `.pf` files (located in `C:\Windows\Prefetch`) are created by Windows to speed up app launches, serving as crucial forensic evidence to show what, when, and how often programs (including malware) were run, even if deleted, by tracking execution details like timestamps, run counts, and accessed files, helping build timelines and prove activity. 
+The best way to go about this is by examining *Prefetch*. `.pf` files (located in `C:\Windows\Prefetch`) are created by Windows to speed up app launches, serving as crucial forensic evidence to show what, when, and how often programs were run, even if deleted, by tracking execution details like timestamps, run counts, and accessed files, helping build timelines and prove activity. 
 
-So we start by dumping and extracting the files inside the `Prefetch` folder. We're interested in the file called `FILE_UPLOADER.EXE-FCDB89C7.pf`. Using *PEcmd* to analyze said `.pf` file we see that the executable last ran on **22025-01-29 11:26:09** and that it was ran **twice** by Liam.
+So we start by dumping and extracting the files inside the `Prefetch` folder. We're interested in the file called `FILE_UPLOADER.EXE-FCDB89C7.pf`. Using *PEcmd* to analyze said `.pf` file we see that the executable last ran on **2025-01-29 11:26:09** and that it was ran **twice** by Liam.
 
 ![pf analysis](../img/diskfiltration/Q9-1.png)
 
@@ -98,7 +98,7 @@ Going back to the content of `.zip` file received by Liam from teh external enti
 
 ![condifential metadata](../img/diskfiltration/Q10-1.png)
 
-### It seems like Liam caused one last damage before leaving. When did Liam delete "Tax Records.docx"? (YYYY-MM-DD HH:MM:SS)
+### It seems like Liam caused one last damage before leaving. When did Liam delete "Tax Records.docx"?
 
 We start in *Autopsy* by dumping `$UsnJrnl` which is a hidden system file at the root of each NTFS volume specifically under the `$Extend` directory. This file records all file and directory changes on a volume, including creation, modification, deletion, and renaming events.
 
@@ -111,7 +111,7 @@ Then we import the generated file `usnjrnl_raw.csv` into *TimelineExplorer* to v
 ![TimelineExplorer](../img/diskfiltration/Q11-2.png)
 
 
-### Which social media site did Liam search for using his web browser? Likely to avoid suspicion, thinking somebody was watching him. (Full URL)
+### Which social media site did Liam search for using his web browser? Likely to avoid suspicion, thinking somebody was watching him.
 
 This is easily found using *Autopsy* under *Web History*, it's **https://www.facebook.com/**
 
