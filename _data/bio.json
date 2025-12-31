@@ -1,18 +1,17 @@
 {
   "basics": {
     "name": "Charbel Farhat",
-    "label": "Backend and Cloud Engineer",
+    "label": "Security Researcheer | Backend & Cloud Engineer",
     "picture": "https://github.com/dwbruijn.png",
     "email": "charbel.y.farhat@gmail.com",
     "phone": "",
     "website": "https://charbelfarhat.com",
     "resumeUrlPdf": "",
-    "summary": "I'm a Software Engineer specializing in backend development. Cybersecurity really piques my curiosity !",
+    "summary": "I'm a Backend and Cloud Engineer with a passion for Security Research and Threat Intelligence.",
     "summaryLong": [
-      "I'm a Software Engineer with 3 years of experience specilizing in Backend development and Cloud engineering. I enjoy coding, especially when it involves collaborating with a team to tackle complex problems and coming up with scalable and cost-efficient solutions.",
-      "My involvement in cybersecurity since high school (bug bounty hunting, malware analysis, and threat intelligence) helped me develop an attacker's mindset, which gives me a unique edge in system design and secure coding practices that most engineers simply don't have.",
-      "While ChatGPT might be quicker at cranking out CRUD stacks, I believe my real value comes in balancing the trade-offs, working with people, and finding the right solutions that align with business requirements and budget constraints.",
-      "I like to keep things light and fun, but I'm serious about delivering quality. Whether it's diving into code reviews or process improvements, I aim for a balance of high standards and practical solutions."
+      "I'm a Security Researcher and experienced Backend & Cloud Engineer transitioning into a full-time cybersecurity role. I enjoy build and breaking systems, especially when it involves collaborating with a team to tackle complex problems in a scalable and cost-efficient way.",
+      "I've been deeply involved in cybersecurity since college, focusing on Threat Intelligence and Malware Analysis. I tracked major Ransomware-as-a-Service campaigns (GrandCrab, REvil, Ryuk... and other malware campaigns) and uncovered novel attack techniques and obfuscation methods used by cybercriminals, initially inspired by the WannaCry outbreak.",
+      "I like to keep things light and fun, but I'm serious about delivering quality. I aim for a balance of high standards and practical solutions."
     ],
     "location": { "address": "", "postalCode": "", "city": "Beirut", "countryCode": "Lebanon", "region": "" },
     "profiles": [
@@ -22,7 +21,6 @@
   },
   "interests": [
     { "name": "Python" },
-    { "name": "Java" },
     { "name": "Cybersecurity" },
     { "name": "Distributed Systems" },
     { "name": "Cloud Computing" },
@@ -51,6 +49,15 @@
       "cert": "Google Cloud Certified Associate Cloud Engineer",
       "date": "2025",
       "credential_url": "https://www.credly.com/badges/64dc99e7-433a-4d69-9089-d78e9e10b332/public_url"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "TryHackMe Top 3%",
+      "description": "Ranked in the top 3% of users on TryHackMe, a leading cybersecurity training platform",
+      "date": "2025",
+      "url": "https://tryhackme.com/p/dwbruijn",
+      "badge_url": "https://tryhackme.com/api/v2/badges/public-profile?userPublicId=6435272"
     }
   ],
   "work": [
