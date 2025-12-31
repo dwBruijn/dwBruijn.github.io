@@ -103,12 +103,9 @@ layout: home
             <p class="m-0"><strong>{{ entry.title }}</strong></p>
             <p class="m-0">{{ entry.description }}</p>
             <p class="m-0 text-muted">{{ entry.date }}</p>
-            {% if entry.url %}
-              <a href="{{ entry.url }}" target="_blank">View profile</a>
-            {% endif %}
             {% if entry.badge_url %}
               <div class="mt-2">
-                <iframe src="{{ entry.badge_url }}" style="border:none;" width="100%"></iframe>
+                <iframe src="{{ entry.badge_url }}" style="border:none;" width="100%" height="75"></iframe>
               </div>
             {% endif %}
           </div>
