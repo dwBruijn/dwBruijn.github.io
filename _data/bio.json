@@ -59,7 +59,7 @@
   "achievements": [
     {
       "title": "TryHackMe Top 3%",
-      "description": "Ranked in the top 3% of users on TryHackMe, a leading cybersecurity training platform",
+      "description": "Ranked in the top 3% of users on TryHackMe.",
       "date": "2025",
       "url": "https://tryhackme.com/p/dwbruijn",
       "badge_url": "https://tryhackme.com/api/v2/badges/public-profile?userPublicId=6435272"
