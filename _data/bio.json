@@ -49,6 +49,11 @@
       "cert": "Google Cloud Certified Associate Cloud Engineer",
       "date": "2025",
       "credential_url": "https://www.credly.com/badges/64dc99e7-433a-4d69-9089-d78e9e10b332/public_url"
+    },
+    {
+      "institution": "Cisco",
+      "cert": "Cisco Certified Network Associate (CCNA)",
+      "date": "2020"
     }
   ],
   "achievements": [
