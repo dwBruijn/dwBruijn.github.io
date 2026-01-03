@@ -11,4 +11,5 @@ end
 gem "webrick", "~> 1.7"
 gem 'html-proofer'
 gem 'jekyll-gist'
+gem 'jekyll-sitemap'
 gem 'rouge'
