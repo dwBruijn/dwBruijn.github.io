@@ -2,6 +2,9 @@
 layout: blog
 type: blog
 title: "OWASP Juice Shop: Broken Access Control Solutions"
+description: "Complete solutions for OWASP Juice Shop broken access control challenges: SQL injection, IDOR exploitation, HTTP parameter pollution, CSRF attacks, and API security vulnerabilities."
+keywords: "OWASP Juice Shop, broken access control, SQL injection tutorial, IDOR vulnerability, HTTP parameter pollution, CSRF attack, API security, web application security"
+author: "Charbel Farhat"
 # All dates must be YYYY-MM-DD format!
 date: 2021-09-28
 published: true

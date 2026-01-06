@@ -2,6 +2,9 @@
 layout: blog
 type: blog
 title: "TryHackMe - DiskFiltration (Hard)"
+description: "Complete DFIR walkthrough of TryHackMe DiskFiltration challenge: digital forensics investigation using Autopsy, registry analysis, prefetch examination, USN journal analysis, and data exfiltration detection."
+keywords: "digital forensics, DFIR, disk image analysis, Autopsy forensics, Windows registry analysis, prefetch analysis, USN journal, data exfiltration detection, TryHackMe"
+author: "Charbel Farhat"
 date: 2025-12-30
 published: true
 labels:

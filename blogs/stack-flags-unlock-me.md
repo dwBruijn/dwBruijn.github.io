@@ -2,6 +2,9 @@
 layout: blog
 type: blog
 title: "STACK The Flags CTF 2020 Web Challenge: Unlock Me"
+description: "Exploiting JWT vulnerabilities: complete guide to RS256/HS256 algorithm confusion attack, JWT token forgery, and bypassing authentication in STACK The Flags CTF challenge."
+keywords: "JWT vulnerability, JWT algorithm confusion, RS256 HS256 attack, JWT token forgery, authentication bypass, web security, CTF writeup, JSON web token exploitation"
+author: "Charbel Farhat"
 # All dates must be YYYY-MM-DD format!
 date: 2020-12-23
 published: true

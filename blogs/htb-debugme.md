@@ -2,6 +2,9 @@
 layout: blog
 type: blog
 title: "HackTheBox Reversing Challenge: Debugme"
+description: "Reverse engineering Windows binary with anti-debugging techniques: bypassing PEB checks, TLS callbacks analysis, RDTSC timing attacks, and XOR decryption in HackTheBox DebugMe challenge."
+keywords: "reverse engineering, anti-debugging techniques, PEB BeingDebugged, TLS callbacks, RDTSC timing attack, binary patching, malware analysis, IDA Pro tutorial"
+author: "Charbel Farhat"
 # All dates must be YYYY-MM-DD format!
 date: 2020-09-15
 published: true

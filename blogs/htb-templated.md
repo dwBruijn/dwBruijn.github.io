@@ -2,6 +2,9 @@
 layout: blog
 type: blog
 title: "HackTheBox Web Challenge: Templated"
+description: "Exploiting Server-Side Template Injection (SSTI) in Flask/Jinja2: comprehensive guide to bypassing template engines, understanding MRO, __subclasses__, and achieving RCE through SSTI vulnerabilities."
+keywords: "SSTI vulnerability, server-side template injection, Flask SSTI, Jinja2 exploitation, Python SSTI, template injection tutorial, web security, hackthebox templated"
+author: "Charbel Farhat"
 # All dates must be YYYY-MM-DD format!
 date: 2021-08-07
 published: true

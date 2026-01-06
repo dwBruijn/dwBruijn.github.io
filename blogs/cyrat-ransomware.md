@@ -2,6 +2,9 @@
 layout: blog
 type: blog
 title: "Cyrat: A badly written Ransomware"
+description: "Technical analysis of Cyrat ransomware: Python-based malware using AES-128 Fernet encryption, RSA key exchange, and VSS deletion. Learn reverse engineering techniques for malware analysis."
+keywords: "ransomware analysis, malware reverse engineering, cyrat ransomware, python malware, fernet encryption, pyinstaller malware, malware analysis tutorial, cybersecurity"
+author: "Charbel Farhat"
 # All dates must be YYYY-MM-DD format!
 date: 2020-09-02
 published: true

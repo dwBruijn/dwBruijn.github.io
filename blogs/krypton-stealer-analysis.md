@@ -2,6 +2,9 @@
 layout: blog
 type: blog
 title: "Krypton Stealer Full Analysis"
+description: "In-depth malware analysis of Krypton credential stealer: reverse engineering techniques, IDB analysis, targeted software including browsers, FTP clients, VPNs, and crypto wallets."
+keywords: "krypton stealer, credential stealer malware, malware reverse engineering, stealer analysis, browser password theft, cryptocurrency wallet malware, malware IDB analysis, cybersecurity"
+author: "Charbel Farhat"
 # All dates must be YYYY-MM-DD format!
 date: 2020-11-28
 published: true
