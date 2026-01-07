@@ -22,13 +22,13 @@ labels:
 
 Modern software is built on layers of third-party dependencies, CI/CD tooling, and external services. Supply chain attacks exploit this trust by compromising components upstream, allowing malicious code to spread downstream into otherwise legitimate applications.
 
-The impact and frequency of these attacks have grown so significantly that OWASP Top 10 (2025) ranks A03:2025 – Software Supply Chain Failures as the 3rd most critical application security risk. From poisoned open-source packages to compromised build pipelines, supply chain security is no longer a niche concern—it’s a core part of modern threat modeling.
+The impact and frequency of these attacks have grown so significantly that OWASP Top 10 (2025) ranks Software Supply Chain Failures as the 3rd most critical application security risk. From poisoned open-source packages to compromised build pipelines, supply chain security is no longer a niche concern, it’s a core part of modern threat modeling.
 
 ## GuardDog and the Limitations of Static Analysis Tools
 
 To counter the rise of supply chain attacks, organizations increasingly rely on automated security tooling to analyze dependencies before they reach production. [GuardDog](https://github.com/DataDog/guarddog), an open-source tool maintained by Datadog, aims to detect malicious packages in ecosystems like PyPI and npm by statically analyzing package code and metadata for suspicious patterns and known attack techniques. This approach is effective at catching common and previously observed threats, raising the baseline security of dependency usage.
 
-However, malicious packages are fundamentally hard to detect. They are often deliberately crafted to appear benign—delaying execution, hiding behavior behind environment checks, or using legitimate APIs and obfuscation in ways that evade static signatures. When analyzed in isolation, many such packages show little that clearly distinguishes them from legitimate code.
+However, malicious packages are fundamentally hard to detect. They are often deliberately crafted to appear benign by delaying execution, hiding behavior behind environment checks, or using legitimate APIs and obfuscation in ways that evade static signatures. When analyzed in isolation, many such packages show little that clearly distinguishes them from legitimate code.
 
 This highlights a broader limitation of SAST in the supply chain. Static analysis lacks runtime context and intent, making it difficult to determine how or when a dependency will behave maliciously. As a result, detection often happens only after trust has already been granted, leaving sophisticated supply chain attacks able to slip past even well-designed scanning tools. Not to mention the fact that static analysis fails miserably against novel obfuscation schemes and attack tachniques.
 
@@ -58,7 +58,7 @@ In addition to Semgrep, GuardDog leverages **YARA-like rules** to identify known
 - Hardcoded URLs, IPs, or command-and-control indicators
 - Reused fragments from previously identified malicious packages
 
-YARA-style matching is particularly effective for catching commodity or copy-pasted malware, but it is inherently retrospective—it works best against patterns that have already been observed.
+YARA-style matching is particularly effective for catching commodity or copy-pasted malware, but it is inherently retrospective and it works best against patterns that have already been observed.
 
 ### Metadata and Heuristic Signals
 
@@ -78,7 +78,7 @@ Crucially, all of this analysis happens **without executing the package**. While
 
 ## Evading the GuardDog
 
-I was interested in contributing to GuardDog as an open-source project, which led me to evaluate and refine its detection rules based on malicious patterns I’ve encountered while reverse-engineering Python packages used in supply chain attacks.
+I was interested in contributing to GuardDog as an open-source project, which led me to evaluate and refine its detection rules based on malicious patterns I’ve encountered while reverse engineering Python packages used in supply chain attacks.
 
 ### Evading Code Execution Detection
 
