@@ -5,7 +5,7 @@ title: "The False Sense of Security in Supply Chain Scanning"
 description: "Exploring the limitations of static analysis in detecting supply chain attacks. How GuardDog uses Semgrep and YARA to detect malicious packages, and techniques to evade detection through code execution, base64 payloads, and DNS exfiltration."
 keywords: "supply chain attacks, SAST, static analysis, GuardDog, Semgrep, YARA, malicious packages, PyPI security, npm security, code execution detection, base64 obfuscation, DNS exfiltration, DevSecOps, software supply chain security"
 author: "Charbel Farhat"
-date: 2026-01-06
+date: 2026-01-07
 published: true
 labels:
   - Supply Chain Attacks
