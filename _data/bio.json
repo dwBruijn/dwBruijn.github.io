@@ -9,7 +9,7 @@
     "resumeUrlPdf": "",
     "summary": "I'm a Backend and Cloud Engineer with a passion for Security Research and Threat Intelligence.",
     "summaryLong": [
-      "I'm a Security Researcher and experienced Backend & Cloud Engineer transitioning into a full-time cybersecurity role. I enjoy build and breaking systems, especially when it involves collaborating with a team to tackle complex problems in a scalable and cost-efficient way.",
+      "I'm a Security Researcher and experienced Backend & Cloud Engineer pivoting into a full-time cybersecurity role. I enjoy build and breaking systems, especially when it involves collaborating with a team to tackle complex problems in a scalable and cost-efficient way.",
       "I've been deeply involved in cybersecurity since college, focusing on Threat Intelligence and Malware Analysis. I tracked major Ransomware-as-a-Service campaigns (GrandCrab, REvil, Ryuk... and other malware campaigns) and uncovered novel attack techniques and obfuscation methods used by cybercriminals, initially inspired by the WannaCry outbreak.",
       "I like to keep things light and fun, but I'm serious about delivering quality. I aim for a balance of high standards and practical solutions."
     ],
@@ -44,6 +44,12 @@
     }
   ],
   "certifications": [
+    {
+      "institution": "CompTIA",
+      "cert": "CompTIA Security+",
+      "date": "2026",
+      "credential_url": "https://www.credly.com/badges/297aad3b-ddae-4a67-90b4-6bcd4ad705ed/public_url"
+    },
     {
       "institution": "Google Cloud",
       "cert": "Google Cloud Certified Associate Cloud Engineer",
