@@ -45,6 +45,12 @@
   ],
   "certifications": [
     {
+      "institution": "INE",
+      "cert": "eJPT",
+      "date": "2026",
+      "credential_url": "https://certs.ine.com/125c1d5e-953b-43e6-a77c-f77a1e2133ba#acc.Uw352Jr7"
+    },
+    {
       "institution": "CompTIA",
       "cert": "CompTIA Security+",
       "date": "2026",
