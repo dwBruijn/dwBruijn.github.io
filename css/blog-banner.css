@@ -1,0 +1,38 @@
+/* Blog banner image styling - first image in blog content */
+.blog-content > p:first-child img {
+    width: 100% !important;
+    max-width: 800px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto 2rem auto !important;
+    float: none !important;
+    border-radius: 0.375rem !important;
+}
+
+/* Content images - all other images */
+.blog-content img {
+    display: block !important;
+    margin: 1rem auto !important;
+    float: none !important;
+    clear: both !important;
+    max-width: 600px !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0.375rem !important;
+}
+
+/* Ensure banner image takes precedence */
+.blog-content > p:first-child img {
+    width: 100% !important;
+    max-width: 800px !important;
+}
+
+/* Override any Bootstrap float utilities in blog content */
+.blog-content .float-start,
+.blog-content .float-end,
+.blog-content .float-left,
+.blog-content .float-right {
+    float: none !important;
+    display: block !important;
+    margin: 1rem auto !important;
+}

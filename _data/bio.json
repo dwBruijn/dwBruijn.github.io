@@ -1,0 +1,82 @@
+{
+  "basics": {
+    "name": "Charbel Farhat",
+    "label": "Security Researcher & Engineer",
+    "picture": "https://github.com/dwbruijn.png",
+    "website": "https://charbelfarhat.com",
+    "resumeUrlPdf": "",
+    "summary": "I'm a Security Researcher and Engineer with a strong background in Backend & Cloud Engineering and a passion for Vulnerability Research.",
+    "summaryLong": [
+      "I'm a Security Researcher and Engineer with a strong background in Backend and Cloud Engineering. I enjoy designing, developing, securing, and breaking systems, especially when it involves collaborating with a team to tackle complex problems in a scalable and cost-efficient way.",
+      "I've been deeply involved in cybersecurity since college, focusing on Threat Intelligence and Malware Analysis. I tracked major Ransomware-as-a-Service campaigns (GrandCrab, REvil, Ryuk... and other malware campaigns) and uncovered novel attack techniques and obfuscation methods used by cybercriminals, initially inspired by the Wannacry outbreak.",
+      "I like to keep things light and fun, but I'm serious about delivering quality. I aim for a balance of high standards and practical solutions."
+    ],
+    "location": { "address": "", "postalCode": "", "city": "Beirut", "countryCode": "Lebanon", "region": "" },
+    "profiles": [
+      { "network": "github", "username": "dwbruijn", "url": "https://github.com/dwbruijn" },
+      { "network": "linkedin", "username": "charbelfarhat", "url": "https://linkedin.com/in/charbelfarhat" }
+    ]
+  },
+  "interests": [
+    { "name": "Vulnerability Research" },
+    { "name": "Cloud Security" },
+    { "name": "Distributed Systems" },
+    { "name": "Python" },
+    { "name": "CTFs" }
+  ],
+  "education": [
+    {
+      "institution": "Lebanese University",
+      "area": "Computer Science",
+      "studyType": "BS",
+      "startDate": "2018",
+      "endDate": "2021",
+      "courses": [
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "institution": "INE",
+      "cert": "eJPT",
+      "date": "2026",
+      "credential_url": "https://certs.ine.com/125c1d5e-953b-43e6-a77c-f77a1e2133ba#acc.Uw352Jr7"
+    },
+    {
+      "institution": "CompTIA",
+      "cert": "CompTIA Security+",
+      "date": "2026",
+      "credential_url": "https://www.credly.com/badges/297aad3b-ddae-4a67-90b4-6bcd4ad705ed/public_url"
+    },
+    {
+      "institution": "Google Cloud",
+      "cert": "Google Cloud Certified Associate Cloud Engineer",
+      "date": "2025",
+      "credential_url": "https://www.credly.com/badges/64dc99e7-433a-4d69-9089-d78e9e10b332/public_url"
+    },
+    {
+      "institution": "Cisco",
+      "cert": "Cisco Certified Network Associate (CCNA)",
+      "date": "2020"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "TryHackMe Top 1%",
+      "description": "Ranked in the top 1% of users on TryHackMe.",
+      "date": "2025",
+      "badge_url": "https://tryhackme.com/api/v2/badges/public-profile?userPublicId=6435272"
+    }
+  ],
+  "work": [
+  ],
+  "volunteer": [
+  ],
+  "awards": [
+  ],
+  "references": [
+    {
+      "name": "Available upon request"
+    }
+  ]
+}
