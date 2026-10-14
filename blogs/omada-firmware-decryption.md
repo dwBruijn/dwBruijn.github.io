@@ -26,7 +26,7 @@ I've been messing around with TP-Link firmware images for a while now and I figu
 
 The image is a 1.27 GB `.bin` bundled with a GPL licence PDF. Throwing the `.bin` at `file` we get: `data`, and binwalk finds nothing at all:
 
-*binwalk 3.1.0 — 85 signatures, 187 magic patterns*
+*binwalk 3.1.0: 85 signatures, 187 magic patterns*
 
 ```
 Analyzed 1 file for 85 file signatures (187 magic patterns) in 1.4 seconds
@@ -50,7 +50,7 @@ Perfect entropy, and **zero** duplicate blocks in 79.6 million. A 1.27 GB root f
 
 ## The header is cleartext, so let's read it
 
-The first 0xC00 (3 KB) is not encrypted — that is where the encrypted region begins. It has a structure:
+The first 0xC00 (3 KB) is not encrypted, that is where the encrypted region begins. It has a structure:
 
 *Offset 0x00*
 
@@ -114,7 +114,7 @@ There it is in a comment: a 256-byte RSA field at `0x130`. Every field matches t
 | 0x130 | 256 | rsa | signature (byte-reversed) |
 | 0x230 | 3536 | reserved2 | zeros to 0xbff, then payload |
 | 0x1000 | 4096 | entry table | encrypted |
-| 0x2000 | — | payloads | encrypted |
+| 0x2000 | - | payloads | encrypted |
 
 ## The design flaw, in TP-Link's own words
 
@@ -175,11 +175,11 @@ WE see a 128-bit key taken from the salt pointer, IV at `salt+0x10`, length trun
 
 ## Finding the public key
 
-The key is a Microsoft `PUBLICKEYBLOB` stored as base64. My first sweep of all 45,532 files inside the sibling GPL image found nothing, because I searched for the prefix `BgIAAAwk` that previously published TP-Link keys start with. This key begins `BgIAAACk` — the difference is `aiKeyAlg`, `0x0000a400` (`CALG_RSA_KEYX`) rather than `0x0000240c`. Widening the search to `BgIAAA` found exactly one distinct key across the whole archive.
+The key is a Microsoft `PUBLICKEYBLOB` stored as base64. My first sweep of all 45,532 files inside the sibling GPL image found nothing, because I searched for the prefix `BgIAAAwk` that previously published TP-Link keys start with. This key begins by `BgIAAACk` and the difference is `aiKeyAlg`, `0x0000a400` (`CALG_RSA_KEYX`) rather than `0x0000240c`. Widening the search to `BgIAAA` found exactly one distinct key across the whole archive.
 
 It appears both in readable source and compiled into binaries:
 
-- `package/utils/uboot-envtools/src/fw_rsa_verify.c` — as `teRsaPubKey`, split across C string literals
+- `package/utils/uboot-envtools/src/fw_rsa_verify.c` - as `teRsaPubKey`, split across C string literals
 - `staging_dir/host/bin/dkmgt_firmware_make` — as the symbol `rsaPubKey`
 - `usr/sbin/dkmgt`, `usr/sbin/cli_server`, `usr/sbin/rsa_sign_verify`, and both `fip.bin` bootloader images
 
