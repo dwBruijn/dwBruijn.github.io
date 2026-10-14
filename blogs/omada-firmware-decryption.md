@@ -345,7 +345,7 @@ Unpacking the file system of the firmware image (`rootfs.bin`) gives 810 MB acro
 
 Keys are per-image, derived from each file's own signature. The sibling Fusion 2.5G 1.0.30 image yields `b1145466ca135fb597a81c0fc7674b09` / `2ca0e734a7e401263542062de2c6bebc` by the identical process.
 
-## 09. The tool
+## The tool
 
 Here's a small script that decrypts and unpacks our target firmware image.
 
@@ -448,7 +448,7 @@ PSS randomises a signature with a salt and then hands that salt back to every ve
   […/20260625/fusion_2.5g_poe_v1.0_rel_1.0.0.tar.gz](https://static.tp-link.com/upload/gpl-code/2026/202606/20260625/fusion_2.5g_poe_v1.0_rel_1.0.0.tar.gz)  
   […/20260624/fusion_g+_v2.0_rel_1.0.0.tar.gz](https://static.tp-link.com/upload/gpl-code/2026/202606/20260624/fusion_g%2b_v2.0_rel_1.0.0.tar.gz)
 
-### Target Firmware images
+### Target Firmware image
 
 - **Fusion Pro 2.5G 4.0.0 Build 20260914 — the target**  
   [static.tp-link.com/upload/firmware/2026/202609/20260930/Fusion Pro 2.5G(UN)_V1.0_4.0.0 Build 20260914.zip](https://static.tp-link.com/upload/firmware/2026/202609/20260930/Fusion%20Pro%202.5G(UN)_V1.0_4.0.0%20Build%2020260914.zip)  
