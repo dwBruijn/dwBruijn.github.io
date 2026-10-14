@@ -18,9 +18,7 @@ labels:
 
 ![Omada Banner](../img/Omada/banner.png)
 
-## Introduction
-
-I've been messing around with TP-Link firmware images for a while now and I figured why not write a blog about decrypting the latest firmware image (4.0.0 Build 20260914) for their Omada Fusion Pro 2.5G and shed the light on firmware "encryption" wekanesses that are very common.
+I've been messing around with TP-Link firmware images for a while now and I figured why not write a blog about decrypting the latest firmware image (4.0.0 Build 20260914) for their Omada Fusion Pro 2.5G and shed some light on firmware "encryption" wekanesses that are very common.
 
 ## A first look
 
