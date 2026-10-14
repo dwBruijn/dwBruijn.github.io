@@ -5,6 +5,7 @@ title: "HackTheBox Web Challenge: Toxic"
 description: "Complete guide to exploiting Local File Inclusion (LFI) vulnerabilities: from PHP object deserialization to log poisoning and achieving remote code execution on HackTheBox Toxic challenge."
 keywords: "LFI vulnerability, local file inclusion, log poisoning, PHP deserialization, LFI to RCE, nginx log poisoning, web exploitation, hackthebox toxic"
 author: "Charbel Farhat"
+image: "/img/toxic/banner.png"
 # All dates must be YYYY-MM-DD format!
 date: 2021-08-08
 published: true

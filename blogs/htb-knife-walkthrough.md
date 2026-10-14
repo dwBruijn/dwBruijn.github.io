@@ -5,6 +5,7 @@ title: "HackTheBox Knife Walkthrough"
 description: "Complete HackTheBox Knife walkthrough: exploiting PHP 8.1.0-dev backdoor RCE vulnerability and privilege escalation using knife command. Step-by-step CTF solution with detailed exploit analysis."
 keywords: "hackthebox knife, PHP 8.1.0-dev exploit, PHP backdoor vulnerability, zerodium exploit, privilege escalation, CTF walkthrough, penetration testing, reverse shell"
 author: "Charbel Farhat"
+image: "/img/knife/banner.jpg"
 # All dates must be YYYY-MM-DD format!
 date: 2021-08-06
 published: true
