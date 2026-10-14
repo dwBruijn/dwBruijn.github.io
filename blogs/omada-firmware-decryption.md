@@ -432,24 +432,3 @@ There is no leaked key, no weak cipher, no implementation slip in AES. The primi
 
 PSS randomises a signature with a salt and then hands that salt back to every verifier; that is the construction working as intended. Using it as an AES key silently converts a signing scheme into a broadcast of the encryption key. Firmware encryption on a device that must decrypt its own updates in the field is always closer to obfuscation than secrecy, but this particular shape means the public key alone is sufficient to decrypt the image with no bootloader dump, no flash desolder, no hardware at all.
 
----
-
-## Everything used
-
-### The archive that makes it all possible
-
-- **Omada Fusion 2.5G GPL source: the format spec and the public key**  
-  [static.tp-link.com/upload/gpl-code/2026/202605/20260509/fusion_2.5g_v1.0_rel_1.0.20.tar.gz](https://static.tp-link.com/upload/gpl-code/2026/202605/20260509/fusion_2.5g_v1.0_rel_1.0.20.tar.gz)  
-  429,430,633 B · 45,532 members · sha256 `2365303c92bd6725fc6c34a794972917a46808a1753077d5c6fcb129941eade1`
-- **TP-Link Tapo C310 v2 GPL: the libsecurity source that documents salt-as-key**  
-  [static.tp-link.com/upload/gpl-code/2022/202211/20221130/c310v2_GPL.tar.bz2](https://static.tp-link.com/upload/gpl-code/2022/202211/20221130/c310v2_GPL.tar.bz2)  
-  249,866,538 B
-- **Sibling GPL drops (other keys / other platforms)**  
-  […/20260625/fusion_2.5g_poe_v1.0_rel_1.0.0.tar.gz](https://static.tp-link.com/upload/gpl-code/2026/202606/20260625/fusion_2.5g_poe_v1.0_rel_1.0.0.tar.gz)  
-  […/20260624/fusion_g+_v2.0_rel_1.0.0.tar.gz](https://static.tp-link.com/upload/gpl-code/2026/202606/20260624/fusion_g%2b_v2.0_rel_1.0.0.tar.gz)
-
-### Target Firmware image
-
-- **Fusion Pro 2.5G 4.0.0 Build 20260914 — the target**  
-  [static.tp-link.com/upload/firmware/2026/202609/20260930/Fusion Pro 2.5G(UN)_V1.0_4.0.0 Build 20260914.zip](https://static.tp-link.com/upload/firmware/2026/202609/20260930/Fusion%20Pro%202.5G(UN)_V1.0_4.0.0%20Build%2020260914.zip)  
-  .bin is 1,273,414,016 B · first firmware released for this model
