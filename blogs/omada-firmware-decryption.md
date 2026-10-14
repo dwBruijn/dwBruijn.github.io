@@ -116,7 +116,7 @@ There it is in a comment: a 256-byte RSA field at `0x130`. Every field matches t
 | 0x1000 | 4096 | entry table | encrypted |
 | 0x2000 | — | payloads | encrypted |
 
-## 04. The design flaw, in TP-Link's own words
+## The design flaw, in TP-Link's own words
 
 The cipher is clearly documented in TP-Link Tapo C310 v2 GPL's `libsecurity`, published with their camera source. The function `rsa2_pss_sha256_verifysig()` verifies an EMSA-PSS/SHA-256 signature, recovers the salt, and then does this:
 
@@ -153,7 +153,7 @@ The AES-128 key is `salt[0:16]` and the CBC IV is `salt + 16`. The vendor's own 
 
 Going back to the non-Pro Fusion GPL dump, I was able to disassemble/decompile `rsaVerify(.c)` (under `package/utils/uboot-envtools/src/`) is a few hundred lines of PKCS#1 v1.5 only with no PSS, no AES. The PSS-plus-AES path exists in the Fusion family as **compiled code**.
 
-*Disassembly — rsa2_pss_sha256_verifysig @0x1b427, dkmgt_firmware_make*
+*Disassembly of rsa2_pss_sha256_verifysig @0x1b427, dkmgt_firmware_make*
 
 ```nasm
 0001b616  call  0x15966   ; RSA_SHA256_MGF1
@@ -230,7 +230,7 @@ Now that I had the key, I needed to locate the signature and where the encrypted
 00022a20  call  0x1bbc3  ; rsaVerifyPSSSignByBase64EncodePublicKeyBlob
 ```
 
-Two facts were immediately clear: the signature really is the 256 bytes at `0x130`, and the signed and encrypted region starts at **`0xC00`.
+Two facts were immediately clear: the signature really is the 256 bytes at `0x130`, and the signed and encrypted region starts at **`0xC00`**.
 
 ## The signature is stored backwards
 
@@ -335,7 +335,7 @@ Also now readable, the JSON metadata which confirms the image identity:
 
 Unpacking the file system of the firmware image (`rootfs.bin`) gives 810 MB across 22,811 files: OpenWrt Barrier Breaker 14.07 on `mediatek/generic`, ARM64, with nginx running as root, a Lua captive portal, a Java Omada controller and the VMS stack.
 
-| | |
+| Field | Value |
 |---|---|
 | **Image** | Fusion Pro 2.5G 4.0.0 Build 20260914 |
 | **AES-128-CBC key** | `ff539b0fc4ca8ec53fbeef2e0ec5ab51` |
