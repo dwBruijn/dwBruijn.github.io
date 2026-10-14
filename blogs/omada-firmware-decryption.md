@@ -1,7 +1,7 @@
 ---
 layout: blog
 type: blog
-title: "Pass Me The Salt: Decrypting TP-Link Omada Firmware"
+title: "Pass Me The Salt: Decrypting TP-Link Omada Fusion Pro Firmware"
 description: "A 1.27 GB TP-Link Omada Fusion Pro firmware image decrypts with nothing but the vendor's own public key, because the RSA-PSS salt is the AES key. The whole path, from an opaque blob to mounted filesystems."
 keywords: "TP-Link, Omada, Fusion Pro, firmware decryption, firmware reverse engineering, RSA-PSS, PSS salt, AES-128-CBC, libsecurity, PUBLICKEYBLOB, GPL source, binwalk, ghidra, IDA Pro, IoT security"
 author: "dwbruijn"
