@@ -215,8 +215,9 @@ The build is quite clean:
 - stripped symbol tables
 - six platform/arch builds shipped together
 
-The module lives under `.local`. The commit author email in the staging repo was `ci-review@memtensor.invalid`. `.invalid` is an RFC 2606 reserved TLD that can never resolve.
+The module lives under `.local`. The commit author email in the staging repo was `ci-review@memtensor.invalid`. 
+`.invalid` is an RFC 2606 reserved TLD that can never resolve.
 
-All C2 sits under `skyleen.fr` across six randomised subdomains which point to a single Vultr IP (`139.84.223.178`).
+All C2 sit under `skyleen.fr` across six randomised subdomains which point to a single Vultr IP (`139.84.223.178`).
 
 So yeah, we can expect more campaigns from these guys.
